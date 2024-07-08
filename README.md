@@ -1,5 +1,5 @@
 # 💫 About Me:
- Hey👋! I'm Shailendra Mourya, a 2nd-year B.Tech CSE student at Amity University Gwalior from 2022-26 batch. I started my journey with learning of web development. I'm currently learning the UI/UX and also having my hands on Graphic designing with canva.<br> I'm passionate about coding, web-development and cyber security.<br>I also enjoy designing new things in canva.<br>Lets connect and collaborate!!
+ Hey👋! I'm Shailendra Mourya, a 3rd-year B.Tech CSE student at Amity University Gwalior from 2022-26 batch. I started my journey with learning of web development. I'm currently learning the UI/UX and also having my hands on Graphic designing with canva.<br> I'm passionate about coding, web-development and cyber security.<br>I also enjoy designing new things in canva.<br>Lets connect and collaborate!!
 
 
 ## 🌐 Socials:
