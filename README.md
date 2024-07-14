@@ -6,6 +6,14 @@
 
 ###
 
+<br clear="both">
+
+<div align="center">
+  <img height="150" src="https://media.licdn.com/dms/image/D5616AQFWoNQTuYk7eQ/profile-displaybackgroundimage-shrink_350_1400/0/1720408262678?e=1726704000&v=beta&t=Rb3SjtE4RknXVG99MiZKgQPPxaHdT0abmP-B0OF7M2Q"  />
+</div>
+
+###
+
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" height="30" alt="c logo"  />
   <img width="18" />
@@ -38,12 +46,6 @@
 
 ###
 
-<br clear="both">
-
-<img align="right" height="150" src="https://i.pinimg.com/736x/5c/b1/97/5cb19711445c68f0d6a21edd4773db52.jpg"  />
-
-###
-
 <div align="left">
   <a href="https://www.linkedin.com/in/shailum17" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="42" height="30" alt="linkedin logo"  />
@@ -63,8 +65,8 @@
 <br clear="both">
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=shailum17&locale=en&mode=daily&theme=panda&hide_border=true&border_radius=5" height="150" alt="streak graph"  />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=shailum17&theme=github-dark&hide_title=false&hide_border=true" height="150" alt="activity-graph graph"  />
+  <img src="https://streak-stats.demolab.com?user=shailum17&locale=en&mode=daily&theme=panda&hide_border=true&border_radius=5" height="200" alt="streak graph"  />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=shailum17&theme=github-dark&hide_title=false&hide_border=true&radius=10&area=true" height="200" alt="activity-graph graph"  />
   <img src="https://github-readme-stats.vercel.app/api?username=shailum17&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=panda&locale=en&hide_border=true" height="150" alt="stats graph"  />
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=shailum17&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=panda&hide_border=true" height="150" alt="languages graph"  />
   <img src="https://github-profile-trophy.vercel.app?username=shailum17&theme=apprentice&no-frame=true&column=8&row=1" height="150" alt="trophy graph"  />
@@ -78,7 +80,9 @@
 
 ###
 
-<div align="right">
+<br clear="both">
+
+<div align="left">
   <a href="https://open.spotify.com/user/31y5secef23zrglih5fq74e4fqve">
     <img src="https://spotify-recently-played-readme.vercel.app/api?user=31y5secef23zrglih5fq74e4fqve&count=4&unique=true" alt="Spotify recently played"  />
   </a>
@@ -86,12 +90,8 @@
 
 ###
 
-<div align="center">
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=shailum17.shailum17&"  />
-</div>
+<br clear="both">
 
-###
-
-<img align="left" height="200" src="https://i.pinimg.com/564x/62/28/d2/6228d25463d31c946ca470929135cf03.jpg"  />
+<img align="right" height="150" src="https://i.pinimg.com/564x/62/28/d2/6228d25463d31c946ca470929135cf03.jpg"  />
 
 ###
