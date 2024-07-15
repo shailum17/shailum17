@@ -76,7 +76,7 @@
 ###
 
 <img src="https://raw.githubusercontent.com/shailum17/shailum17/output/snake.svg" alt="Snake animation" />
-](https://github.com/shailum17/shailum17/blob/output/github-contribution-grid-snake.gif)
+
 ###
 
 <div align="center">
