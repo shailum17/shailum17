@@ -72,6 +72,8 @@
   <img src="https://github-profile-trophy.vercel.app?username=shailum17&theme=apprentice&no-frame=true&column=8&row=1" height="150" alt="trophy graph"  />
 </div>
 
+![snake gif](https://github.com/YOUR_USERNAME/YOUR_USERNAME/blob/output/github-contribution-grid-snake.gif)
+
 ###
 
 <img src="https://raw.githubusercontent.com/shailum17/shailum17/output/snake.svg" alt="Snake animation" />
