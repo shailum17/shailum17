@@ -14,7 +14,7 @@
 
 ###
 
-<div align="center">
+<div align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" height="30" alt="c logo"  />
   <img width="18" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" height="30" alt="cplusplus logo"  />
@@ -80,18 +80,8 @@
 
 ###
 
-<br clear="both">
-
-<div align="left">
-  <a href="https://open.spotify.com/user/31y5secef23zrglih5fq74e4fqve">
-    <img src="https://spotify-recently-played-readme.vercel.app/api?user=31y5secef23zrglih5fq74e4fqve&count=4&unique=true" alt="Spotify recently played"  />
-  </a>
+<div align="center">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=shailum17.shailum17&"  />
 </div>
-
-###
-
-<br clear="both">
-
-<img align="right" height="150" src="https://i.pinimg.com/564x/62/28/d2/6228d25463d31c946ca470929135cf03.jpg"  />
 
 ###
