@@ -2,7 +2,7 @@
 
 ###
 
-<p align="left">A 3rd-year B.Tech CSE student at Amity University Gwalior from 2022-26 batch. I started my journey with learning of web development. I'm currently learning the UI/UX and also having my hands on Graphic designing with canva.<br>I'm passionate about coding, web-development and cyber security. I also enjoy designing new things in canva. Lets connect and collabor</p>
+<p align="left">A 3rd-year B.Tech CSE student at Amity University Gwalior from 2022-26 batch. I started my journey with learning of web development. I'm currently learning the UI/UX and also having my hands on Graphic designing with canva.<br>I'm passionate about coding, web-development and cyber security.I'm looking for some best resources to develop skills in ethical hacking I also enjoy designing new things in canva. Lets connect and collabor</p>
 
 ###
 
