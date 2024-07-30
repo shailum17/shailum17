@@ -12,7 +12,7 @@
   <img height="150" src="https://media.licdn.com/dms/image/D5616AQFWoNQTuYk7eQ/profile-displaybackgroundimage-shrink_350_1400/0/1720408262678?e=1726704000&v=beta&t=Rb3SjtE4RknXVG99MiZKgQPPxaHdT0abmP-B0OF7M2Q"  />
 </div>
 <hr>
-###
+
 
 <div align="left">
 <h3> Known Programming Languages </h3> 
