@@ -3,15 +3,15 @@
 ###
 
 <p align="left">A 3rd-year B.Tech CSE student at Amity University Gwalior from 2022-26 batch. I started my journey with learning of web development. I'm currently learning the UI/UX and also having my hands on Graphic designing with canva.<br>I'm passionate about coding, web-development and cyber security. I also enjoy designing new things in canva. Lets connect and collabor</p>
-<hr>
 
+###
 
 <br clear="both">
 
 <div align="center">
   <img height="150" src="https://media.licdn.com/dms/image/D5616AQFWoNQTuYk7eQ/profile-displaybackgroundimage-shrink_350_1400/0/1720408262678?e=1726704000&v=beta&t=Rb3SjtE4RknXVG99MiZKgQPPxaHdT0abmP-B0OF7M2Q"  />
 </div>
-
+<hr>
 ###
 
 <div align="left">
