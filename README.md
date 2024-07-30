@@ -3,7 +3,7 @@
 ###
 
 <p align="left">A 3rd-year B.Tech CSE student at Amity University Gwalior from 2022-26 batch. I started my journey with learning of web development. I'm currently learning the UI/UX and also having my hands on Graphic designing with canva.<br>I'm passionate about coding, web-development and cyber security. I also enjoy designing new things in canva. Lets connect and collabor</p>
-
+<hr>
 ###
 
 <br clear="both">
@@ -15,6 +15,7 @@
 ###
 
 <div align="left">
+<h3> Known Programming Languages </h3> 
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" height="30" alt="c logo"  />
   <img width="18" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" height="30" alt="cplusplus logo"  />
@@ -47,6 +48,7 @@
 ###
 
 <div align="left">
+<h3> Social Media</h3>
   <a href="https://www.linkedin.com/in/shailum17" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="42" height="30" alt="linkedin logo"  />
   </a>
