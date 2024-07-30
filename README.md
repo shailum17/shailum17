@@ -50,7 +50,7 @@
 <div align="left">
 <h3> Social Media</h3>
   <a href="https://www.linkedin.com/in/shailum17" target="_blank">
-    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="42" height="30" alt="linkedin logo"  />
+    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="42" height="30" alt="linkedin logo" href="https://www.linkedin.com/in/shailum17" />
   </a>
   <a href="https://www.instagram.com/shailu_m17?igsh=MWY2bGxmZHp3ZDQwMA==" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg" width="42" height="30" alt="instagram logo"  />
