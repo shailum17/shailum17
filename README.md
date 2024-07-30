@@ -11,11 +11,11 @@
 <div align="center">
   <img height="150" src="https://media.licdn.com/dms/image/D5616AQFWoNQTuYk7eQ/profile-displaybackgroundimage-shrink_350_1400/0/1720408262678?e=1726704000&v=beta&t=Rb3SjtE4RknXVG99MiZKgQPPxaHdT0abmP-B0OF7M2Q"  />
 </div>
-<hr>
 
+###
 
 <div align="left">
-<h3> Known Programming Languages </h3> 
+  <h2> Programming Languages Known </h2> 
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" height="30" alt="c logo"  />
   <img width="18" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" height="30" alt="cplusplus logo"  />
@@ -48,9 +48,9 @@
 ###
 
 <div align="left">
-<h3> Social Media</h3>
+  <h2> Social-Media </h2> 
   <a href="https://www.linkedin.com/in/shailum17" target="_blank">
-    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="42" height="30" alt="linkedin logo" href="https://www.linkedin.com/in/shailum17" />
+    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="42" height="30" alt="linkedin logo"  />
   </a>
   <a href="https://www.instagram.com/shailu_m17?igsh=MWY2bGxmZHp3ZDQwMA==" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg" width="42" height="30" alt="instagram logo"  />
@@ -67,6 +67,7 @@
 <br clear="both">
 
 <div align="center">
+  <h2> GitHub Stats </h2> 
   <img src="https://streak-stats.demolab.com?user=shailum17&locale=en&mode=daily&theme=panda&hide_border=true&border_radius=5" height="200" alt="streak graph"  />
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=shailum17&theme=github-dark&hide_title=false&hide_border=true&radius=10&area=true" height="200" alt="activity-graph graph"  />
   <img src="https://github-readme-stats.vercel.app/api?username=shailum17&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=panda&locale=en&hide_border=true" height="150" alt="stats graph"  />
