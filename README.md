@@ -66,7 +66,7 @@
 
 <br clear="both">
 
-<div align="center">
+<div >
   <h2> GitHub Stats </h2> 
   <img src="https://streak-stats.demolab.com?user=shailum17&locale=en&mode=daily&theme=panda&hide_border=true&border_radius=5" height="200" alt="streak graph"  />
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=shailum17&theme=github-dark&hide_title=false&hide_border=true&radius=10&area=true" height="200" alt="activity-graph graph"  />
