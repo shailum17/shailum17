@@ -19,11 +19,12 @@ I'm a Computer Science and Engineering student at Amity University Gwalior, pass
 ### 🧑‍💻Random Cyber Quote
 ![](https://github-readme-cyber-quotes.vercel.app/api?type=horizontal&theme=tokyonight)
 
-### ✍️Random Dev Quote
+### ✍️Random Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight)
 
-### 😂Random Dev Meme
-<img src="https://meme-api.com/gimme/wholesomememes" width="512px"/>
+### 😂Random Meme
+<img src="https://meme-api.herokuapp.com/gimme" width="512px"/>
+
 
 ---
 [![](https://visitcount.itsvg.in/api?id=shailum17&icon=0&color=0)](https://visitcount.itsvg.in)
