@@ -23,7 +23,7 @@ I'm a Computer Science and Engineering student at Amity University Gwalior, pass
 ### ✍️Random Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight)
 
-### 😂Random Meme
+### 😂Random Memes 
 <img src="https://meme-api.herokuapp.com/gimme" width="512px"/>
 
 
