@@ -1,112 +1,173 @@
 # .github/workflows/metrics.yml
-name: Metrics
+name: Generate GitHub Metrics
 
 on:
-  # Schedule daily updates (adjust cron as needed)
-  schedule: [{cron: "0 0 * * *"}]
-  # Run workflow manually
-  workflow_dispatch:
-  # Run workflow when pushing on master/main (optional)
-  push: {branches: ["master", "main"]}
+  schedule: [{cron: "0 0 * * *"}] # Runs daily at midnight UTC (5:30 AM IST)
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+  push: {branches: ["main", "master"]} # Optional: Trigger on push to main/master
 
 jobs:
-  github-metrics:
+  generate-metrics:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # To commit the generated files
-    steps:
-      - uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.METRICS_TOKEN }} # Use your PAT from repository secrets
-          user: shailum17 # Your GitHub username
-          template: classic # You can experiment with other templates like `terminal`, `repository`, etc.
-          # Base metrics
-          base: |
-            header
-            activity
-            community
-            repositories
-            metadata
-          config_display: columns
-          config_padding: 0, 10 # Adjust padding if needed
-          config_output: svg
-          filename: output/github-profile-summary.svg # Output path
+      contents: write # Needed to commit the generated SVG files
 
-          # Core GitHub Stats (replaces anuraghazra's for consistency)
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 1: Generate Profile Overview (Header, Intro, Activity)
+      - name: Generate Profile Overview Metrics
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: ${{ github.event.repository.owner.login }}
+          base: header, activity, community, repositories, metadata
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
-          plugin_isocalendar_light: "#ebedf0" # Adjust if you have a light theme or prefer a different color
+          plugin_isocalendar_light: "#ebedf0" # Adjust if you use a light theme or want a custom color
+          config_timezone: Asia/Kolkata
+          config_units: metric
+          config_octicon: yes
+          config_animated: yes
+          config_icons: yes
+          config_font: monospace
+          config_variants: dark:tokyonight # Or light:solarized-light, etc.
+          output_dir: output # Ensure this directory exists
+          filename: profile-overview.svg # This specific file will be created
 
-          # GitHub Stats from metrics
-          plugin_introduction: yes
-          plugin_introduction_title: yes
-          plugin_introduction_description: yes
-
-          # Languages
+      # Step 2: Generate Detailed Language Breakdown
+      - name: Generate Language Metrics
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: ${{ github.event.repository.owner.login }}
+          base: "" # No base section for this specific metric
           plugin_languages: yes
-          plugin_languages_sections: |
-            most-used
-            recently-used
-          plugin_languages_threshold: 0% # Show all languages
-          plugin_languages_details: bytes-size, percentage # Display more details
-          plugin_languages_limit: 10 # Number of languages to show
-          plugin_languages_other: yes # Include "Other" category
-          filename_languages: output/github-languages.svg
+          plugin_languages_sections: most-used, recently-used
+          plugin_languages_threshold: 0%
+          plugin_languages_details: bytes-size, percentage, lines
+          plugin_languages_limit: 8 # Adjust number of languages to show
+          plugin_languages_other: yes
+          config_timezone: Asia/Kolkata
+          config_units: metric
+          config_octicon: yes
+          config_animated: yes
+          config_icons: yes
+          config_font: monospace
+          config_variants: dark:tokyonight
+          output_dir: output
+          filename: metrics-languages.svg
 
-          # Stargazers (show your starred repositories)
-          plugin_stars: yes
-          filename_stars: output/github-stars.svg
-
-          # Topics (show topics you frequently use in your repos)
+      # Step 3: Generate Most Used Topics
+      - name: Generate Topics Metrics
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: ${{ github.event.repository.owner.login }}
+          base: ""
           plugin_topics: yes
           plugin_topics_limit: 10 # Number of topics to show
-          filename_topics: output/github-topics.svg
+          config_timezone: Asia/Kolkata
+          config_units: metric
+          config_octicon: yes
+          config_animated: yes
+          config_icons: yes
+          config_font: monospace
+          config_variants: dark:tokyonight
+          output_dir: output
+          filename: metrics-topics.svg
 
-          # Lines of code (advanced, requires more permissions usually)
-          # Make sure your PAT has `repo` scope for this to work well
-          plugin_lines: yes
-          plugin_lines_history: yes
-          plugin_lines_sections: |
-            code
-            commits
-            additions
-            deletions
-          filename_lines: output/github-lines.svg
-
-          # Activity
+      # Step 4: Generate Recent Activity Graph
+      - name: Generate Activity Metrics
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: ${{ github.event.repository.owner.login }}
+          base: ""
           plugin_activity: yes
-          plugin_activity_limit: 5 # Number of recent activities to show
-          plugin_activity_days: 14 # Activity within the last X days
-          filename_activity: output/github-activity.svg
+          plugin_activity_limit: 7 # Number of activities to show
+          plugin_activity_days: 30 # Activity within the last X days
+          config_timezone: Asia/Kolkata
+          config_units: metric
+          config_octicon: yes
+          config_animated: yes
+          config_icons: yes
+          config_font: monospace
+          config_variants: dark:tokyonight
+          output_dir: output
+          filename: metrics-activity.svg
 
-          # GitHub Trophies (requires `ryo-ma/github-profile-trophy` if you want this specific style,
-          # or use metrics' own achievement plugin)
-          # For consistency with the rest, let's use lowlighter/metrics's achievements plugin
+      # Step 5: Generate GitHub Achievements / Trophies
+      - name: Generate Achievements Metrics
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: ${{ github.event.repository.owner.login }}
+          base: ""
           plugin_achievements: yes
-          plugin_achievements_threshold: C # Display achievements above this rank
-          plugin_achievements_secrets: yes # If you want to show secret achievements
-          filename_achievements: output/github-trophies.svg # This will be the new trophy image
+          plugin_achievements_threshold: C # Only show achievements with this rank or higher
+          plugin_achievements_secrets: yes # Show secret achievements if earned
+          config_timezone: Asia/Kolkata
+          config_units: metric
+          config_octicon: yes
+          config_animated: yes
+          config_icons: yes
+          config_font: monospace
+          config_variants: dark:tokyonight
+          output_dir: output
+          filename: metrics-achievements.svg
 
-          # Optional: WakaTime for coding activity stats (requires WakaTime API key as a secret)
-          # If you want this, create a secret called `WAKATIME_TOKEN` with your WakaTime API Key
-          # plugin_wakatime: yes
-          # plugin_wakatime_token: ${{ secrets.WAKATIME_TOKEN }}
-          # plugin_wakatime_sections: time, projects, languages, editors, os, daily
-          # plugin_wakatime_limit: 5
-          # filename_wakatime: output/github-wakatime.svg
+      # Step 6: Generate Annual Contributions (alternative to isocalendar in overview)
+      - name: Generate Contributions Calendar
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: ${{ github.event.repository.owner.login }}
+          base: ""
+          plugin_calendar: yes # Use the dedicated calendar plugin
+          plugin_calendar_mode: daily
+          plugin_calendar_duration: full-year
+          config_timezone: Asia/Kolkata
+          config_units: metric
+          config_octicon: yes
+          config_animated: yes
+          config_icons: yes
+          config_font: monospace
+          config_variants: dark:tokyonight
+          output_dir: output
+          filename: metrics-contributions.svg
 
-          # Set theme for all metrics images
-          config_timezone: Asia/Kolkata # Important for accurate time tracking
-          config_units: metric # Or imperial
-          config_order: default # Or custom order if you want to rearrange
-          config_octicon: yes # Use GitHub's octicons where available
-          config_animated: yes # Enable animations
-          config_icons: yes # Show icons next to titles
-          config_font: monospace # Or other font options
+      # Optional: WakaTime for coding activity stats
+      # To enable:
+      # 1. Get your WakaTime API key (from wakatime.com/settings/api-key)
+      # 2. Add it as a repository secret named `WAKATIME_TOKEN` in your GitHub repo settings
+      # 3. Uncomment this entire step below
+      # - name: Generate WakaTime Metrics
+      #   uses: lowlighter/metrics@latest
+      #   if: ${{ secrets.WAKATIME_TOKEN }} != '' # Only run if Wakatime token exists
+      #   with:
+      #     token: ${{ secrets.METRICS_TOKEN }}
+      #     user: ${{ github.event.repository.owner.login }}
+      #     base: ""
+      #     plugin_wakatime: yes
+      #     plugin_wakatime_token: ${{ secrets.WAKATIME_TOKEN }}
+      #     plugin_wakatime_sections: time, projects, languages, editors, os, daily
+      #     plugin_wakatime_limit: 5
+      #     config_timezone: Asia/Kolkata
+      #     config_units: metric
+      #     config_octicon: yes
+      #     config_animated: yes
+      #     config_icons: yes
+      #     config_font: monospace
+      #     config_variants: dark:tokyonight
+      #     output_dir: output
+      #     filename: metrics-wakatime.svg
 
-          # Choose a theme
-          # For dark:
-          # config_variants: dark:tokyonight
-          # For light (or if you prefer a different look):
-          config_variants: light:solarized-light # Example light theme
-          # config_variants: dark:gruvbox # Another dark theme example
+      - name: Commit generated files
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email github-actions[bot]@users.noreply.github.com
+          git add output/*.svg
+          git commit -m "📊 Update GitHub Metrics" || echo "No changes to commit"
+          git push
