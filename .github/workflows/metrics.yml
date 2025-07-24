@@ -1,5 +1,5 @@
 # .github/workflows/metrics.yml
-name: Generate GitHub Metrics
+name: Generate GitHub Profile Visuals
 
 on:
   schedule: [{cron: "0 0 * * *"}] # Runs daily at midnight UTC (5:30 AM IST)
@@ -7,36 +7,35 @@ on:
   push: {branches: ["main", "master"]} # Optional: Trigger on push to main/master
 
 jobs:
-  generate-metrics:
+  build-github-profile-visuals:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Needed to commit the generated SVG files
+      contents: write # Needed to commit the generated files
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 1: Generate Profile Overview (Header, Intro, Activity)
-      - name: Generate Profile Overview Metrics
-        uses: lowlighter/metrics@latest
+      # Step 1: Generate 3D GitHub Contribution Graph
+      - name: Generate 3D Contributions
+        uses: yoshi389111/github-profile-3d-contrib@0.1.5 # Using a specific version for stability
         with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: ${{ github.event.repository.owner.login }}
-          base: header, activity, community, repositories, metadata
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
-          plugin_isocalendar_light: "#ebedf0" # Adjust if you use a light theme or want a custom color
-          config_timezone: Asia/Kolkata
-          config_units: metric
-          config_octicon: yes
-          config_animated: yes
-          config_icons: yes
-          config_font: monospace
-          config_variants: dark:tokyonight # Or light:solarized-light, etc.
-          output_dir: output # Ensure this directory exists
-          filename: profile-overview.svg # This specific file will be created
+          USERNAME: ${{ github.event.repository.owner.login }}
+          OUTPUT_PATH: output/3d-contributions.gif # Output path for the GIF
+          MAX_REPOS: 100 # Adjust if you have many repos, helps with performance
+          # Theme options (choose one or customize)
+          # See https://github.com/yoshi389111/github-profile-3d-contrib for more options
+          # COLOR_GRADIENT: "#007bff,#6610f2" # Example gradient
+          # BASE_COLOR: "0x2e3440" # Nord Dark Base
+          # FONT_COLOR: "0xffffff" # White font color
+          # For a darker theme, you might use colors from tokyonight or similar palettes.
+          BACKGROUND_COLOR: "0x161b22" # Dark background, similar to GitHub Dark
+          CONTRIB_COLOR: "0x238636" # GitHub green for contributions
+          LINE_COLOR: "0x30363d" # Dark line color
+          # DURATION: 10 # GIF duration in seconds
+          # FPS: 20 # Frames per second
 
-      # Step 2: Generate Detailed Language Breakdown
+      # Step 2: Generate Detailed Language Breakdown (using lowlighter/metrics)
       - name: Generate Language Metrics
         uses: lowlighter/metrics@latest
         with:
@@ -47,7 +46,7 @@ jobs:
           plugin_languages_sections: most-used, recently-used
           plugin_languages_threshold: 0%
           plugin_languages_details: bytes-size, percentage, lines
-          plugin_languages_limit: 8 # Adjust number of languages to show
+          plugin_languages_limit: 8
           plugin_languages_other: yes
           config_timezone: Asia/Kolkata
           config_units: metric
@@ -55,11 +54,11 @@ jobs:
           config_animated: yes
           config_icons: yes
           config_font: monospace
-          config_variants: dark:tokyonight
+          config_variants: dark:tokyonight # Ensure this theme matches your preference
           output_dir: output
           filename: metrics-languages.svg
 
-      # Step 3: Generate Most Used Topics
+      # Step 3: Generate Most Used Topics (using lowlighter/metrics)
       - name: Generate Topics Metrics
         uses: lowlighter/metrics@latest
         with:
@@ -67,7 +66,7 @@ jobs:
           user: ${{ github.event.repository.owner.login }}
           base: ""
           plugin_topics: yes
-          plugin_topics_limit: 10 # Number of topics to show
+          plugin_topics_limit: 10
           config_timezone: Asia/Kolkata
           config_units: metric
           config_octicon: yes
@@ -78,27 +77,7 @@ jobs:
           output_dir: output
           filename: metrics-topics.svg
 
-      # Step 4: Generate Recent Activity Graph
-      - name: Generate Activity Metrics
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: ${{ github.event.repository.owner.login }}
-          base: ""
-          plugin_activity: yes
-          plugin_activity_limit: 7 # Number of activities to show
-          plugin_activity_days: 30 # Activity within the last X days
-          config_timezone: Asia/Kolkata
-          config_units: metric
-          config_octicon: yes
-          config_animated: yes
-          config_icons: yes
-          config_font: monospace
-          config_variants: dark:tokyonight
-          output_dir: output
-          filename: metrics-activity.svg
-
-      # Step 5: Generate GitHub Achievements / Trophies
+      # Step 4: Generate GitHub Achievements / Trophies (using lowlighter/metrics)
       - name: Generate Achievements Metrics
         uses: lowlighter/metrics@latest
         with:
@@ -106,8 +85,8 @@ jobs:
           user: ${{ github.event.repository.owner.login }}
           base: ""
           plugin_achievements: yes
-          plugin_achievements_threshold: C # Only show achievements with this rank or higher
-          plugin_achievements_secrets: yes # Show secret achievements if earned
+          plugin_achievements_threshold: C
+          plugin_achievements_secrets: yes
           config_timezone: Asia/Kolkata
           config_units: metric
           config_octicon: yes
@@ -118,56 +97,11 @@ jobs:
           output_dir: output
           filename: metrics-achievements.svg
 
-      # Step 6: Generate Annual Contributions (alternative to isocalendar in overview)
-      - name: Generate Contributions Calendar
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: ${{ github.event.repository.owner.login }}
-          base: ""
-          plugin_calendar: yes # Use the dedicated calendar plugin
-          plugin_calendar_mode: daily
-          plugin_calendar_duration: full-year
-          config_timezone: Asia/Kolkata
-          config_units: metric
-          config_octicon: yes
-          config_animated: yes
-          config_icons: yes
-          config_font: monospace
-          config_variants: dark:tokyonight
-          output_dir: output
-          filename: metrics-contributions.svg
-
-      # Optional: WakaTime for coding activity stats
-      # To enable:
-      # 1. Get your WakaTime API key (from wakatime.com/settings/api-key)
-      # 2. Add it as a repository secret named `WAKATIME_TOKEN` in your GitHub repo settings
-      # 3. Uncomment this entire step below
-      # - name: Generate WakaTime Metrics
-      #   uses: lowlighter/metrics@latest
-      #   if: ${{ secrets.WAKATIME_TOKEN }} != '' # Only run if Wakatime token exists
-      #   with:
-      #     token: ${{ secrets.METRICS_TOKEN }}
-      #     user: ${{ github.event.repository.owner.login }}
-      #     base: ""
-      #     plugin_wakatime: yes
-      #     plugin_wakatime_token: ${{ secrets.WAKATIME_TOKEN }}
-      #     plugin_wakatime_sections: time, projects, languages, editors, os, daily
-      #     plugin_wakatime_limit: 5
-      #     config_timezone: Asia/Kolkata
-      #     config_units: metric
-      #     config_octicon: yes
-      #     config_animated: yes
-      #     config_icons: yes
-      #     config_font: monospace
-      #     config_variants: dark:tokyonight
-      #     output_dir: output
-      #     filename: metrics-wakatime.svg
-
+      # Final Step: Commit generated files
       - name: Commit generated files
         run: |
           git config user.name github-actions[bot]
           git config user.email github-actions[bot]@users.noreply.github.com
-          git add output/*.svg
-          git commit -m "📊 Update GitHub Metrics" || echo "No changes to commit"
+          git add output/*.gif output/*.svg # Add both GIF and SVG files
+          git commit -m "✨ Update GitHub 3D Contrib & Metrics" || echo "No changes to commit"
           git push
