@@ -3,7 +3,6 @@
 🚀 Hey there! I'm Shailendra Mourya
 
 👨‍💻 B.Tech CSE Student | Cybersecurity Enthusiast | UI/UX Designer
-
 I'm a Computer Science and Engineering student at Amity University Gwalior, passionate about cybersecurity, cloud-native technologies, and software development. Currently, I'm honing my skills in Java, C, C++, and Python, while also exploring AI/ML and cloud computing.
 
 
