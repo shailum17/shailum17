@@ -18,7 +18,7 @@ jobs:
 
       # Step 1: Generate 3D GitHub Contribution Graph
       - name: Generate 3D Contributions
-        uses: yoshi389111/github-profile-3d-contrib@0.1.5 # Using a specific version for stability
+        uses: shailum17/github-profile-3d-contrib@0.1.5 # Using a specific version for stability
         with:
           USERNAME: ${{ github.event.repository.owner.login }}
           OUTPUT_PATH: output/3d-contributions.gif # Output path for the GIF
