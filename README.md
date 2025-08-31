@@ -147,7 +147,6 @@ Writing and sharing insights through tech blogs.</p></div>
   <img src="https://img.shields.io/github/followers/shailum17?style=for-the-badge&color=ff69b4" alt="Followers"/>
   <p>🌈 <i>Let's connect and build amazing things together!</i> 🚀</p>
 </div>
-
 <!-- Inline SVG Footer Wave Animation -->
 <div align="center">
   <svg width="100%" height="100" viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg">
@@ -160,9 +159,9 @@ Writing and sharing insights through tech blogs.</p></div>
   </svg>
 </div>
 
-<!-- Custom Footer Signature & Motto -->
+<!-- Custom Footer Signature & Motto (Badge) -->
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Pacifico&size=25&duration=3000&pause=1000&color=3CB371&center=true&vCenter=true&width=400&lines=Made+with+❤️+by+Shailendra+Mourya;Keep+Building,+Keep+Learning!" alt="Signature Animation" width="400"/>
+  <img src="https://img.shields.io/badge/Made%20with%20%E2%9D%A4%EF%B8%8F%20by%20Shailendra%20Mourya-Keep%20Building,%20Keep%20Learning!-3CB371?style=for-the-badge" alt="Signature Badge"/>
 </div>
 
 
