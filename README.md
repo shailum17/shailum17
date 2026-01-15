@@ -38,7 +38,7 @@
 </table>
 
 <img src="https://img.shields.io/badge/Status-Available_for_collaboration-brightgreen" alt="Status" /> 
-<img src="https://img.shields.io/badge/Focus-Web_Development-blue" alt="Focus" />
+<img src="https://img.shields.io/badge/Focus-Software_Development-blue" alt="Focus" />
 
 ---
 
